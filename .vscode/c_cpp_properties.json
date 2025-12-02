@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "intelliSenseMode": "windows-msvc-x64",
+            "cppStandard": "c++20",
+            "compilerPath": "C:\\TDM-GCC-64\\bin\\g++",
+            "cStandard": "c17"
+        }
+    ],
+    "version": 4
+}
+// Gladys Monagan, August 2025

@@ -1,0 +1,27 @@
+{
+   "C_Cpp.default.compilerPath": "C:/TDM-GCC-64/bin/g++.exe",
+   "cmake.configureOnOpen": false,
+   "cmake.showOptionsMovedNotification": false,
+   "files.autoSave": "afterDelay",
+   "update.enableWindowsBackgroundUpdates": false,
+   "extensions.autoCheckUpdates": false,
+   "chat.commandCenter.enabled": false,
+   "update.showReleaseNotes": false,
+   "update.mode": "manual",
+   "editor.minimap.autohide": "mouseover",
+   "editor.acceptSuggestionOnCommitCharacter": false,
+   "editor.acceptSuggestionOnEnter": "on",
+   "editor.inlineSuggest.enabled": false,
+   "editor.inlineSuggest.showToolbar": "never",
+   "editor.quickSuggestionsDelay": 30,
+   "editor.wordBasedSuggestions": "off",
+   "editor.tabSize": 3,
+   "editor.detectIndentation": false,
+   "editor.rulers": [80,120],
+   "workbench.colorCustomizations": {
+      "editorRuler.foreground": "#ff4081"
+   },
+   "git.enabled": true
+}
+// Gladys Monagan, August 7, 2025
+// https://uchicago-cs.github.io/student-resource-guide/vscode/config.html

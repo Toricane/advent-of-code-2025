@@ -1,0 +1,77 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "make",
+            "type": "cppbuild",
+            "command": "make",
+            "args": [ ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "detail": "needs a Makefile"
+        }
+        ,
+        {
+            "label": "make unit",
+            "type": "cppbuild",
+            "command": "make",
+            "args": [ 
+                "unit"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "detail": "needs a Makefile with goal unit"
+        }
+        ,
+        {
+            "label": "run or execute (after make is successful)",
+            "type": "shell",
+            "command": "${workspaceFolder}/${fileBasenameNoExtension}",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": [],
+        }
+        ,
+        {
+            "label": "make clean",
+            "type": "cppbuild",
+            "command": "make",
+            "args": [ 
+                "clean"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "detail": "needs a Makefile with a goal clean"
+        }
+        ,
+        {
+            "label": "make remove for osx and linux",
+            "type": "cppbuild",
+            "command": "make",
+            "args": [ 
+                "remove"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "detail": "needs a Makefile with a goal remove to clean files"
+        }
+        ,
+        {
+            "label": "make and make unit",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOrder": "sequence",
+            "dependsOn": ["make", "make unit"],
+            "detail": "needs a Makefile with goals all and unit"
+        }
+    ]
+}
+// Gladys Monagan, August 2025

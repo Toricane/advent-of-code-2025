@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C++ Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            // "externalConsole": false,
+            // if reading with cin, you probably want it to true
+            "externalConsole": true,
+            // windows and linux
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ] 
+            ,
+            // comment out osx if not recognized by your Visual Studio Code
+            "osx": {
+                "MIMode": "lldb",
+                "miDebuggerPath": "",
+                "setupCommands": [],
+            }
+            ,
+            // overkill as only one executable is debugged at a time
+            "preLaunchTask": "make and make unit"
+        }
+    ]
+}
+// Gladys Monagan, August 2025
