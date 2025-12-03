@@ -103,7 +103,7 @@ long long part2(const vector<string> &lines)
       else
       {
          sign = 1;
-         
+
          if (dial + (num % 100) > 99)
          {
             num_0++;
