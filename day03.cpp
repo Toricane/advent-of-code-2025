@@ -1,5 +1,5 @@
 // Day 3
-// Name:
+// Name: Prajwal Prashanth
 
 #include "utils.h"
 
@@ -7,10 +7,12 @@
 #include <ostream>
 #include <string>
 #include <vector>
+#include <cmath>
 
 using advent::read_lines;
 using std::cout;
 using std::ostream;
+using std::pow;
 using std::string;
 using std::vector;
 
@@ -31,7 +33,41 @@ vector<string> parse_input()
 //    returns the computed Part 1 result as a 64-bit integer
 long long part1(const vector<string> &lines)
 {
-   return 0;
+   long long total = 0;
+   int max1 = 0;
+   int max2 = 0;
+   unsigned index1;
+   int digit;
+
+   for (string bank : lines)
+   {
+      if (bank.size() == 0)
+      {
+         continue;
+      }
+      for (unsigned i = 0; i < bank.size() - 1; i++)
+      {
+         digit = bank[i] - '0';
+         if (digit > max1)
+         {
+            max1 = digit;
+            index1 = i;
+         }
+      }
+      for (unsigned i = index1 + 1; i < bank.size(); i++)
+      {
+         digit = bank[i] - '0';
+         if (digit > max2 && i != index1)
+         {
+            max2 = digit;
+         }
+      }
+
+      total += max1 * 10 + max2;
+      max1 = 0;
+      max2 = 0;
+   }
+   return total;
 }
 
 // compute the answer for Day 3 Part 2 based on the parsed input
@@ -41,7 +77,38 @@ long long part1(const vector<string> &lines)
 //    returns the computed Part 2 result as a 64-bit integer
 long long part2(const vector<string> &lines)
 {
-   return 0;
+   long long total = 0;
+   int digit;
+
+   for (string bank : lines)
+   {
+      if (bank.size() == 0)
+      {
+         continue;
+      }
+
+      int index = 0;
+
+      for (int place = 11; place >= 0; place--)
+      {
+         int max = 0;
+
+         for (unsigned i = index; i < bank.size() - place; i++)
+         {
+            digit = bank[i] - '0';
+
+            if (digit > max)
+            {
+               max = digit;
+               index = i;
+            }
+         }
+
+         total += max * pow(10, place);
+         index++;
+      }
+   }
+   return total;
 }
 
 // orchestrate input parsing and rendering of both part results
@@ -52,8 +119,10 @@ long long part2(const vector<string> &lines)
 void solve(ostream &out)
 {
    const vector<string> lines = parse_input();
-   out << "Day 03 - Part 1: " << part1(lines) << '\n';
-   out << "Day 03 - Part 2: " << part2(lines) << '\n';
+   out << "Day 03 - Part 1:\n"
+       << part1(lines) << '\n';
+   out << "Day 03 - Part 2:\n"
+       << part2(lines) << '\n';
 }
 
 // program entry point delegating to solve using standard output
